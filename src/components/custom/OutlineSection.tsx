@@ -1,9 +1,8 @@
-import React from 'react'
+
 import { Skeleton } from '../ui/skeleton'
 import type { Outline } from '@/workspace/project/outline'
 import { Button } from '../ui/button'
-import { Edit, Sparkle, Sparkles } from 'lucide-react'
-import EditOutline from './EditOutline'
+import { Edit } from 'lucide-react'
 import EditOutlineDialog from './EditOutline'
 
 type Props={
@@ -21,8 +20,8 @@ function OutlineSection({loading, outline, handleUpdateOutline}:Props) {
         {
             loading&&<div>
                 {
-                    [1,2,3,4].map((item, index)=>(
-                        <Skeleton key={index} className='h-[60px] w-full rounded-2xl mb-4'/>
+                    [1,2,3,4].map((_, index)=>(
+                        <Skeleton key={index} className='h-15 w-full rounded-2xl mb-4'/>
                     ))
                 }
             </div>

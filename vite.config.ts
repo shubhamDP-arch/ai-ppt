@@ -12,12 +12,6 @@ export default defineConfig({
     },
   },
   build: {
-    // Ignore TypeScript errors during build
-    rollupOptions: {
-      onwarn(warning, warn) {
-        // Suppress all warnings
-        return
-      }
-    }
+
   }
 })

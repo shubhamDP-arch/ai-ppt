@@ -1,7 +1,7 @@
-import React, { useContext } from 'react'
+
 import logo from '../../assets/logo.png'
 import { Button } from '../ui/button'
-import { SignIn, SignInButton, UserButton, useUser } from '@clerk/clerk-react'
+import { SignInButton, UserButton, useUser } from '@clerk/clerk-react'
 import { Link, useLocation } from 'react-router-dom';
 import {Gem } from 'lucide-react';
 

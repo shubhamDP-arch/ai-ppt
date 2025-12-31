@@ -1,4 +1,4 @@
-import { useState } from 'react'
+
 import './App.css'
 import Header from './components/custom/header'
 import Hero from './components/custom/hero'

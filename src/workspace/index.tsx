@@ -4,14 +4,14 @@ import { UserDetailContext } from '@/context/UserDetailContext';
 import { useUser } from '@clerk/clerk-react'
 import Header  from '@/components/custom/header';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
-import React, { useContext, useEffect } from 'react'
+import  { useContext, useEffect } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import PromptBox from '@/components/custom/PromptBox';
 import MyProjects from '@/components/custom/MyProjects';
 
 function Workspace() {
-  const {user, isLoaded} = useUser();
-  const {userDetail, setUserDetail} = useContext(UserDetailContext);
+  const {user, } = useUser();
+  const {setUserDetail} = useContext(UserDetailContext);
 
   useEffect(()=>{
     user &&CreateNewUser()

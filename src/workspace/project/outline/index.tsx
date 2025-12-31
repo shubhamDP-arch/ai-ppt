@@ -2,9 +2,9 @@ import OutlineSection from '@/components/custom/OutlineSection'
 import SliderStyle, { type DesignStyle } from '@/components/custom/SliderStyle'
 import { Button } from '@/components/ui/button'
 import { firebaseDb, GeminiAiModel } from '@/config/FirebaseConfig'
-import { doc, getDoc, setDoc, updateDoc } from 'firebase/firestore'
+import { doc, getDoc, setDoc } from 'firebase/firestore'
 import { ArrowRight, Loader2Icon } from 'lucide-react'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
 export type Project={
@@ -25,11 +25,11 @@ export type Outline={
 
 function Outline() {
   const {projectId} = useParams()
-  const [projectDetail, setProjectDetail] = useState<Project>();
+  const [, setProjectDetail] = useState<Project>();
   const [loading, setLoading] = useState(false);
   const [outline,setOutline] = useState<Outline[]>([]);
   const [selectedStyle, setSelectedStyle] = useState<DesignStyle>();
-  const [UpdateDbLoading, setUpdateDbLoading] = useState(false)
+  const [UpdateDbLoading,] = useState(false)
   useEffect(()=>{
     projectId && getProjectDetail()
   },[projectId])

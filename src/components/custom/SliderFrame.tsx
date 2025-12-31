@@ -1,9 +1,7 @@
 
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import FloatingActionTool from './FloatingActionTool';
-import { firebaseDb, GeminiAiModel } from '@/config/FirebaseConfig';
-import { doc, setDoc } from 'firebase/firestore';
-import { useParams } from 'react-router-dom';
+import {  GeminiAiModel } from '@/config/FirebaseConfig';
 
 const HTML_DEFAULT = `<!DOCTYPE html>
 <html lang="en">
@@ -75,13 +73,13 @@ type props = {
 
 function SliderFrame({ slide, colors, setUpdateSlider }: props) {
 
-    const { projectId } = useParams();
+    // const { projectId } = useParams();
     const FINAL_CODE = HTML_DEFAULT
         .replace("{colorCodes}", JSON.stringify(colors))
         .replace("{code}", slide?.code);
 
     const iframeRef = useRef<any>(null);
-    const [loading, setLoading] = useState(false);
+    const [_, setLoading] = useState(false);
     const selectedElRef = useRef<HTMLElement | null>(null);
     const [cardPosition, setCardPosition] = useState<{ x: number, y: number } | null>(null)
     useEffect(() => {
@@ -247,15 +245,15 @@ by providing ?tr=fo-auto,<other transfromation> etc.
     }
 
     // ✅ Save slides to Firebase
-    const SaveAllSlides = async (updatedSlides: any[]) => {
-        if (!projectId) return;
-        await setDoc(
-            doc(firebaseDb, "projects", projectId),
-            { slides: updatedSlides },
-            { merge: true }
-        );
-        console.log("✅ Slides updated to Firestore");
-    };
+    // const SaveAllSlides = async (updatedSlides: any[]) => {
+    //     if (!projectId) return;
+    //     await setDoc(
+    //         doc(firebaseDb, "projects", projectId),
+    //         { slides: updatedSlides },
+    //         { merge: true }
+    //     );
+    //     console.log("✅ Slides updated to Firestore");
+    // };
 
 
     return (
