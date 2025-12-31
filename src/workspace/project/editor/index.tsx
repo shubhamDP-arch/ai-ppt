@@ -113,7 +113,7 @@ function Editor() {
                 if (message.type === "serverContent") {
                     const parts = message.modelTurn?.parts;
                     if (parts && parts.length > 0) {
-                        text += parts.map((p: { text: any; }) => p.text).join("");
+                        text += parts.map((p: any) => p.text).join("");
 
                         const finalText = text
                             .replace(/```html/g, "")
@@ -226,7 +226,6 @@ function Editor() {
                         outline={projectDetail?.outline ?? []}
                         handleUpdateOutline={() => console.log('Update outline')}
                         loading={loading}
-                        editable={false}
                     />
                 </div>
                 <div className='col-span-3 h-screen overflow-auto' ref={containerRef}>
