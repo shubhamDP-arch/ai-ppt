@@ -7,9 +7,9 @@ import type { Project } from '../outline';
 import SliderFrame from '@/components/custom/SliderFrame';
 import * as htmlToImage from "html-to-image";
 import PptxGenJS from "pptxgenjs";
-import { FileDown, InfoIcon, Loader2 } from 'lucide-react';
+import { FileDown,  Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+
 
 const SLIDER_PROMPT = `Generate HTML (TailwindCSS + Flowbite UI + Lucide Icons) 
 code for a 16:9 ppt slider in Modern Dark style.
@@ -29,11 +29,11 @@ Generate Image if needed using:
 Replace {imagePrompt} with relevant image prompt and altImageName with a random image name.  
 
 <!-- Slide Content Wrapper (Fixed 16:9 Aspect Ratio) -->
-<div class="w-[800px] h-[500px] relative overflow-hidden">
+<div class="w-200 h-125 relative overflow-hidden">
   <!-- Slide content here -->
 </div>
 Also do not add any overlay : Avoid this :
-    <div class="absolute inset-0 bg-gradient-to-br from-primary to-secondary opacity-20"></div>
+    <div class="absolute inset-0 bg-linear-to-br from-primary to-secondary opacity-20"></div>
 
 
 Just provide body content for 1 slider. Make sure all content, including images, stays within the main slide div and preserves the 16:9 ratio.`
